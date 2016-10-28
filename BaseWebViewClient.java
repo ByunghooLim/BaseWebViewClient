@@ -15,14 +15,12 @@ public abstract class BaseWebViewClient extends WebViewClient {
     @SuppressWarnings("deprecation")
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
-        LogCat.i("URL", url);
         return customShouldOverrideUrlLoading(view, url);
     }
 
     @TargetApi(Build.VERSION_CODES.N)
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-        LogCat.i("URL", request.getUrl().toString());
         return customShouldOverrideUrlLoading(view, request.getUrl().toString());
     }
 
